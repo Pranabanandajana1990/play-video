@@ -1,0 +1,34 @@
+.video-player {
+  display: flex;
+  justify-content: space-between;
+
+  .player {
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    iframe {
+      width: 90%;
+      height: 90%;
+      border-radius: 6px;
+    }
+  }
+  .list {
+    width: 30vw;
+    height: 95vh;
+    justify-content: space-between;
+    overflow: scroll;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .video-player {
+    flex-direction: column;
+    justify-content: center;
+    .player {
+      width: 100vw;
+    }
+    .list {
+      width: 100vw;
+    }
+  }
+}

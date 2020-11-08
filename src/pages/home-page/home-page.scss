@@ -1,0 +1,7 @@
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1%;
+  justify-items: center;
+  justify-content: center;
+}

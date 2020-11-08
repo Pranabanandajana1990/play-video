@@ -1,0 +1,34 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin: 10px;
+  border-radius: 6px;
+  &:hover {
+    img {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: all 0.2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+    .title {
+      transform: scale(1.1) translateY(5px);
+      transition: all 0.2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
+  .title {
+    font-size: 12px;
+    padding-left: 8px;
+    margin-bottom: 5px;
+    width: 350px;
+  }
+
+  img {
+    border-radius: 6px;
+    height: 30vh;
+    width: 350px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  }
+}
