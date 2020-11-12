@@ -1,0 +1,14 @@
+.sign-in-and-sign-up {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.column {
+  text-align: end;
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
+}

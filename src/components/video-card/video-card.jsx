@@ -17,12 +17,15 @@ const VideoCard = (props) => {
         }
       }}
     >
-      <div className="thumbnail">
-        <img
+      <div
+        style={{ backgroundImage: `url(${props.thumbnails.medium.url})` }}
+        className="thumbnail"
+      >
+        {/* <img
           src={props.thumbnails.medium.url}
           alt=""
           className="thumbnail-image"
-        />
+        /> */}
       </div>
       <div className="title">{props.title}</div>
     </div>

@@ -6,3 +6,8 @@ export const selectHomeVideos = createSelector(
   [selectHome],
   (home) => home.videos
 );
+
+export const selectSearchField = createSelector(
+  [selectHome],
+  (home) => home.searchField
+);
