@@ -1,7 +1,62 @@
-.search-bar {
-  width: 50vw;
-  height: 40px;
-  padding: 1%;
-  border-radius: 10px;
-  border: 1px solid grey;
+$sub-color: grey;
+$main-color: rgb(142, 132, 132);
+
+@mixin shrinkLabel {
+  top: -20px;
+  font-size: 11px;
+  color: $main-color;
+}
+.search-container {
+  width: 70vw;
+  @media screen and (max-width: 450px) {
+    width: 30vw;
+  }
+}
+.group-search {
+  position: relative;
+  .form-input-search {
+    background: none;
+    background-color: rgb(221, 220, 220);
+    font-size: 18px;
+    padding: 10px;
+    width: 20vw;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.5s;
+    &.extend {
+      width: 70vw;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      @media screen and (max-width: 450px) {
+        width: 30vw;
+      }
+    }
+    &:focus {
+      outline: none;
+      background-color: rgb(217, 213, 213);
+      width: 70vw;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      @media screen and (max-width: 450px) {
+        width: 30vw;
+      }
+    }
+
+    &:focus ~ .form-input-label-search {
+      @include shrinkLabel();
+    }
+  }
+
+  .form-input-label-search {
+    color: $sub-color;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
 }

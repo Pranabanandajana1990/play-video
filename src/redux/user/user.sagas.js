@@ -1,13 +1,13 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
 import React from "react";
 import toaster from "toasted-notes";
-import { UserActionType } from "./user.type";
+import { UserActionType } from "./user.types";
 import {
   auth,
   googleProvider,
   createUserProfileDocument,
   getCurrentUser,
-} from "../../firebase/firebase.utils";
+} from "../../api/firebase/utils";
 import {
   signInSuccess,
   signInFaliure,

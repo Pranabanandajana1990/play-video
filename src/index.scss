@@ -1,5 +1,4 @@
 body {
-  font-family: "Lexend Peta", "Open Sans Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,6 +9,8 @@ code {
 }
 
 * {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }

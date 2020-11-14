@@ -1,7 +1,8 @@
-import homeActionTypes from "./home.types";
+import { homeActionTypes } from "./home.types";
 const INITIAL_STATE = {
   videos: [],
   searchField: "",
+  searchFieldError: null,
 };
 
 const homeReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +16,16 @@ const homeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         searchField: action.payload,
+      };
+    case homeActionTypes.SEARCH_FIELD_SUCCESS:
+      return {
+        ...state,
+        videos: action.payload,
+      };
+    case homeActionTypes.SEARCH_FIELD_FALIURE:
+      return {
+        ...state,
+        searchFieldError: action.payload,
       };
     default:
       return state;

@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { setSelectedVideo } from "../../redux/player/player.actions";
 import { withRouter } from "react-router-dom";
 const VideoCard = (props) => {
-  const { match, history } = props;
-
+  const { match, history, title, thumbnails } = props;
+  // console.log(props);
   return (
     <div
       className="video-card"
@@ -18,7 +18,7 @@ const VideoCard = (props) => {
       }}
     >
       <div
-        style={{ backgroundImage: `url(${props.thumbnails.medium.url})` }}
+        style={{ backgroundImage: `url(${thumbnails.medium.url})` }}
         className="thumbnail"
       >
         {/* <img
@@ -27,7 +27,7 @@ const VideoCard = (props) => {
           className="thumbnail-image"
         /> */}
       </div>
-      <div className="title">{props.title}</div>
+      <div className="title">{title}</div>
     </div>
   );
 };

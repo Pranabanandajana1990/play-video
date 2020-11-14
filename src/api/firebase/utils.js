@@ -96,4 +96,25 @@ export const getCurrentUser = () => {
   });
 };
 
+export const addVideosToHome = async (videos, text) => {
+  const homeRef = firestore.doc(`homes/${text}`);
+  const homeSnapShot = await homeRef.get();
+  if (!homeSnapShot.exists) {
+    try {
+      homeRef.set({ videos });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  return;
+};
+export const getHomeVideos = async () => {
+  const homeRef = firestore.doc(`homes/homeGlobal`);
+  const homeSnapShot = await homeRef.get();
+  const { videos } = homeSnapShot.data();
+  // console.log(homeSnapShot.data());
+  return videos;
+};
+export const addVideosToUserPlayList = (user, videos) => {};
+
 export default firebase;

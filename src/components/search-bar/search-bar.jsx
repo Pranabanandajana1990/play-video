@@ -1,33 +1,35 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./search-bar.scss";
-import { setSearchField } from "../../redux/home/home.actions";
+import { searchFieldStart } from "../../redux/home/home.actions";
 
-const SearchBar = ({ setSearchField }) => {
+const SearchBar = ({ searchFieldStart }) => {
   const [text, setText] = useState("");
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSearchField(text);
-      }}
-      className="ui form"
-    >
-      <div className="field">
+    <div className="search-container">
+      <form
+        className="group-search"
+        onSubmit={(e) => {
+          e.preventDefault();
+          searchFieldStart(text);
+        }}
+      >
         <input
-          className="search-bar"
-          placeholder="Search"
+          className={`${text.length ? "extend" : ""} form-input-search`}
           onChange={(e) => setText(e.target.value)}
-          value={text}
-          type="search"
-        ></input>
-      </div>
-    </form>
+        />
+        <label
+          className={`${text.length ? "shrink" : ""} form-input-label-search`}
+        >
+          Search
+        </label>
+      </form>
+    </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  setSearchField: (text) => dispatch(setSearchField(text)),
+  searchFieldStart: (text) => dispatch(searchFieldStart(text)),
 });
 
 export default connect(null, mapDispatchToProps)(SearchBar);

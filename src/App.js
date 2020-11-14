@@ -1,18 +1,39 @@
 import "./App.scss";
 import HomePage from "./pages/home-page/home-page";
-import { Switch, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import VideoPlayer from "./pages/video-palyer-page/video-palyer";
 import Header from "./components/header/header";
-const App = () => {
+import { connect } from "react-redux";
+import { checkUserSession } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { createStructuredSelector } from "reselect";
+import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up";
+const App = ({ currentUser, checkUserSession }) => {
+  useEffect(() => {
+    checkUserSession();
+  }, [checkUserSession]);
   return (
     <div className="App">
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/player" component={VideoPlayer} />
+        <Route
+          exact
+          path="/signin"
+          render={() => (currentUser ? <Redirect to="/" /> : <SignInSignUp />)}
+        />
       </Switch>
     </div>
   );
 };
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  checkUserSession: () => dispatch(checkUserSession()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);

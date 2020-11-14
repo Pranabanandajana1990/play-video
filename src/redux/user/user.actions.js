@@ -1,4 +1,4 @@
-import { UserActionType } from "./user.type";
+import { UserActionType } from "./user.types";
 
 export const googleSignInStart = () => ({
   type: UserActionType.GOOGLE_SIGNIN_START,

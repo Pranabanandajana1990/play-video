@@ -1,6 +1,7 @@
-const homeActionTypes = {
+export const homeActionTypes = {
   SET_HOME_VIDEOS: "SET_HOME_VIDEOS",
   SET_SEARCH_FIELD: "SET_SEARCH_FIELD",
+  SEARCH_FILED_START: "SEARCH_FILED_START",
+  SEARCH_FIELD_SUCCESS: "SEARCH_FIELD_SUCCESS",
+  SEARCH_FIELD_FALIURE: "SEARCH_FIELD_FALIURE",
 };
-
-export default homeActionTypes;
