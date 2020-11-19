@@ -49,7 +49,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             type="button"
             onClick={googleSignInStart}
           >
-            With Google
+            Google
           </CustomButton>
         </div>
       </form>

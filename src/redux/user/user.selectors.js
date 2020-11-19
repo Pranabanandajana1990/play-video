@@ -21,3 +21,8 @@ export const selectSignOutError = createSelector(
   [selectUser],
   (user) => user.signOutError
 );
+
+export const selectPlayList = createSelector(
+  [selectUser],
+  (user) => user.playList
+);

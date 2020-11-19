@@ -34,6 +34,7 @@
     .list {
       width: 70vw;
       overflow: unset;
+      padding: unset;
     }
   }
 }
@@ -43,8 +44,24 @@
     .player {
       height: 50vh;
     }
+    .list {
+      padding: unset;
+    }
   }
 }
+
+@media screen and (max-width: 550px) {
+  .video-player {
+    .player {
+      height: 40vh;
+    }
+    .list {
+      width: 100%;
+      padding: unset;
+    }
+  }
+}
+
 @media screen and (max-width: 450px) {
   .video-player {
     .player {
@@ -52,6 +69,7 @@
     }
     .list {
       width: 100%;
+      padding: unset;
     }
   }
 }

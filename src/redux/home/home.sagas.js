@@ -19,6 +19,7 @@ export function* searchFieldAsync(action) {
     yield put(searchFieldFaliure(error));
     yield toaster.notify(<h5>{error.message}</h5>, {
       duration: 5000,
+      position: "bottom-right",
     });
   }
 }

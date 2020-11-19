@@ -115,6 +115,47 @@ export const getHomeVideos = async () => {
   // console.log(homeSnapShot.data());
   return videos;
 };
-export const addVideosToUserPlayList = (user, videos) => {};
 
+export const addVideoToPlayList = async (user, video) => {
+  const playListRef = firestore
+    .collection("playlists")
+    .doc(user.id)
+    .collection("playlist")
+    .doc(video.videoId);
+  // const playListRef=firestore.collection("playlists").doc(user.id)
+  const playListSnapShot = await playListRef.get();
+  if (!playListSnapShot.exists) {
+    await playListRef.set({ ...video });
+    console.log("success");
+  }
+};
+
+export const deleteVideoFromPlayList = async (user, video) => {
+  const playListRef = firestore
+    .collection("playlists")
+    .doc(user.id)
+    .collection("playlist")
+    .doc(video.videoId);
+  const playListSnapShot = await playListRef.get();
+  if (playListSnapShot.exists) {
+    await playListRef.delete();
+  }
+};
+
+export const getPlayList = async (user) => {
+  const playListRef = firestore
+    .collection("playlists")
+    .doc(user.id)
+    .collection("playlist");
+  // console.log(user);
+  const playListSnapShot = await playListRef.get();
+
+  const data = {};
+  playListSnapShot.forEach((obj) => {
+    const doc = obj.data();
+    // console.log(doc);
+    data[doc.videoId] = doc;
+  });
+  return data;
+};
 export default firebase;

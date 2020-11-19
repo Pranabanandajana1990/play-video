@@ -1,0 +1,14 @@
+.delete-button {
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  color: rgb(103, 149, 229);
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    color: rgba(103, 149, 229, 0.5);
+  }
+  @media screen and (max-width: 500px) {
+    color: unset;
+  }
+}

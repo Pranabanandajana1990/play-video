@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./search-bar.scss";
 import { searchFieldStart } from "../../redux/home/home.actions";
-
-const SearchBar = ({ searchFieldStart }) => {
+import { withRouter } from "react-router-dom";
+const SearchBar = ({ searchFieldStart, match, history }) => {
   const [text, setText] = useState("");
+  // console.log(history);
+  // console.log(match);
   return (
     <div className="search-container">
       <form
+        style={
+          history.location.pathname === "/signin" ? { display: "none" } : null
+        }
         className="group-search"
         onSubmit={(e) => {
           e.preventDefault();
@@ -32,4 +37,4 @@ const mapDispatchToProps = (dispatch) => ({
   searchFieldStart: (text) => dispatch(searchFieldStart(text)),
 });
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(withRouter(SearchBar));

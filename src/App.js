@@ -9,6 +9,7 @@ import { checkUserSession } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up";
+import PlayListPage from "./pages/playlist-page/playlist-page";
 const App = ({ currentUser, checkUserSession }) => {
   useEffect(() => {
     checkUserSession();
@@ -24,6 +25,8 @@ const App = ({ currentUser, checkUserSession }) => {
           path="/signin"
           render={() => (currentUser ? <Redirect to="/" /> : <SignInSignUp />)}
         />
+        <Route exact path="/playlist" component={PlayListPage} />
+        <Route exact path="/playlist/player" component={VideoPlayer} />
       </Switch>
     </div>
   );

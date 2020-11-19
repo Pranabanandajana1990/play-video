@@ -1,36 +1,48 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  align-items: center;
+  height: 100px;
   width: 100%;
   .custom-gravatar {
     border-radius: 50px;
   }
   .option {
-    padding: 5px;
     transition: all 0.2s;
     @media screen and (max-width: 450px) {
       font-size: 10px;
     }
-    &:hover {
-      background-color: rgb(229, 225, 225);
-      // box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-      border-radius: 15px;
+    @media screen and (max-width: 1200px) {
+      font-size: 12px;
     }
+    // &:hover {
+    //   background-color: rgb(229, 225, 225);
+    //   // box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    //   border-radius: 15px;
+    // }
   }
   a {
     text-decoration: none;
+    height: unset;
     color: grey;
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(224, 223, 223, 0.6);
+    &:hover {
+      background-color: rgba(224, 223, 223, 0.6);
+    }
     @media screen and (max-width: 450px) {
       letter-spacing: unset;
+      &:hover {
+        background-color: unset;
+      }
     }
-
-    &:hover {
-      color: rgba(3, 12, 21, 0.5);
+    @media screen and (max-width: 1200px) {
+      letter-spacing: unset;
     }
   }
 }
