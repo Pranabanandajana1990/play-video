@@ -3,14 +3,14 @@ import "firebase/auth";
 import "firebase/firestore";
 // import { TimeStamp } from "firebase/firebase-firestore";
 const config = {
-  apiKey: "AIzaSyCARQwcgFRWGNdM1FX5esLfFP7H3lDEjG0",
-  authDomain: "play-mate-77c1e.firebaseapp.com",
-  databaseURL: "https://play-mate-77c1e.firebaseio.com",
-  projectId: "play-mate-77c1e",
-  storageBucket: "play-mate-77c1e.appspot.com",
-  messagingSenderId: "720133653773",
-  appId: "1:720133653773:web:cfc69076e955eb027ddc44",
-  measurementId: "G-EWNL3661GC",
+  apiKey: "AIzaSyBSmYCtl9WX8JY6THadedLjo4-jFbpKvLs",
+  authDomain: "playvideo-a980d.firebaseapp.com",
+  databaseURL: "https://playvideo-a980d.firebaseio.com",
+  projectId: "playvideo-a980d",
+  storageBucket: "playvideo-a980d.appspot.com",
+  messagingSenderId: "39210118335",
+  appId: "1:39210118335:web:b5a5196f762f3e708eea0a",
+  measurementId: "G-K9LNSCW3CQ",
 };
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -108,8 +108,8 @@ export const addVideosToHome = async (videos, text) => {
   }
   return;
 };
-export const getHomeVideos = async () => {
-  const homeRef = firestore.doc(`homes/homeGlobal`);
+export const getHomeVideos = async (text) => {
+  const homeRef = firestore.doc(`homes/${text}`);
   const homeSnapShot = await homeRef.get();
   const { videos } = homeSnapShot.data();
   // console.log(homeSnapShot.data());

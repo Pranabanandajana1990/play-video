@@ -9,15 +9,17 @@ import React, { useEffect } from "react";
 import VideoCard from "../../components/video-card/video-card";
 import "./home-page.scss";
 import { getHomeVideos } from "../../api/firebase/utils";
+// import { youTubeQuerry } from "../../api";
 const HomePage = ({ setHomeVideos, setSelectedVideo, videos }) => {
   useEffect(() => {
     const getSearch = async (text) => {
-      const result = await getHomeVideos();
+      const result = await getHomeVideos(text);
+      // const result = await youTubeQuerry(text);
       // await addVideosToHome(result, text);
       setHomeVideos(result);
       setSelectedVideo(result[25]);
     };
-    getSearch("");
+    getSearch("cats");
   }, [setHomeVideos, setSelectedVideo]);
 
   return (
