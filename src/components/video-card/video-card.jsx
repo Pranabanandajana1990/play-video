@@ -10,7 +10,7 @@ import {
   selectPlayList,
 } from "../../redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
-const VideoCard = (props) => {
+export const VideoCard = (props) => {
   const {
     match,
     history,

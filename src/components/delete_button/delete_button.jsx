@@ -4,7 +4,7 @@ import "./delete_button.scss";
 import { connect } from "react-redux";
 import { deleteVideoStart } from "../../redux/user/user.actions";
 import { IoMdRemoveCircle } from "react-icons/io";
-const DeleteButton = (props) => {
+export const DeleteButton = (props) => {
   const { video, user, deleteVideoStart } = props;
 
   return (

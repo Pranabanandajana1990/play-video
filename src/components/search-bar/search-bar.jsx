@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./search-bar.scss";
 import { searchFieldStart } from "../../redux/home/home.actions";
 import { withRouter } from "react-router-dom";
-const SearchBar = ({ searchFieldStart, match, history }) => {
+export const SearchBar = ({ searchFieldStart, match, history }) => {
   const [text, setText] = useState("");
   // console.log(history);
   // console.log(match);

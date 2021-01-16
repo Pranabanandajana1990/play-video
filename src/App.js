@@ -25,7 +25,13 @@ const App = ({ currentUser, checkUserSession }) => {
           path="/signin"
           render={() => (currentUser ? <Redirect to="/" /> : <SignInSignUp />)}
         />
-        <Route exact path="/playlist" component={PlayListPage} />
+        <Route
+          exact
+          path="/playlist"
+          render={() =>
+            currentUser ? <PlayListPage /> : <Redirect to="/signin" />
+          }
+        />
         <Route exact path="/playlist/player" component={VideoPlayer} />
       </Switch>
     </div>
