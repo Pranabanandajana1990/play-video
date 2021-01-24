@@ -19,7 +19,7 @@ const HomePage = ({ setHomeVideos, setSelectedVideo, videos }) => {
       setHomeVideos(result);
       setSelectedVideo(result[25]);
     };
-    getSearch("cats");
+    getSearch("news");
   }, [setHomeVideos, setSelectedVideo]);
 
   return (
