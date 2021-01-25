@@ -3,7 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 // import { TimeStamp } from "firebase/firebase-firestore";
 const config = {
-  apiKey: "AIzaSyBlY8_gftan32DzZ1hINQYLQZiaoNP2iLU",
+  apiKey: "AIzaSyBSmYCtl9WX8JY6THadedLjo4-jFbpKvLs",
   authDomain: "playvideo-a980d.firebaseapp.com",
   databaseURL: "https://playvideo-a980d.firebaseio.com",
   projectId: "playvideo-a980d",
